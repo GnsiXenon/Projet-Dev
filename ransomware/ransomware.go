@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/GnsiXenon/Projet-Dev/Ransomware/utils"
+	"github.com/GnsiXenon/Projet-Dev/ransomware/utils"
 )
 
 const (
