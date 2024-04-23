@@ -5,17 +5,40 @@ services:
       context: ./database
       dockerfile: Dockerfile
     container_name: root-you-database
+    restart: always
     volumes:
           - mysql_data:/var/lib/mysql
 
   api:
+    depends_on:
+      - database
     image: tomyj/root-you:api
     container_name: root-you-api
     build:
       context: ./api
       dockerfile: Dockerfile
+    restart: always
     ports:
       - "3232:3232"
+
+  gauntlet-app :
+    build:
+      context: ./gauntlet
+      dockerfile: Dockerfile
+    image: tomyj/root-you:gauntlet
+    container_name: root-you-gauntlet
+    init: true
+    restart: always
+    ports:
+      - "5000:5000"
+
+  ftc:
+    build:
+      context: ./ftc
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "5001:5000"
 
 volumes:
   mysql_data:

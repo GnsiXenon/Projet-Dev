@@ -24,7 +24,7 @@ PAGE8 = '/hidden00127595382036382'
 PAGE9 = '/hidden83365193635473293'
 PAGE10 = '/flag620873537329327365'
 
-FLAG = 'wctf{w3_h0p3_y0u_l34rn3d_s0m3th1ng_4nd_th4t_w3b_c4n_b3_fun_853643}'
+FLAG = 'HaCoeur{w3_h0p3_y0u_l34rn3d_s0m3th1ng_4nd_th4t_w3b_c4n_b3_fun_853643}'
 
 @app.route('/')
 def root():
