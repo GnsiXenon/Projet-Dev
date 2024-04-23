@@ -21,7 +21,7 @@ services:
     ports:
       - "3232:3232"
 
-  gauntlet-app :
+  gauntlet:
     build:
       context: ./gauntlet
       dockerfile: Dockerfile
@@ -33,6 +33,8 @@ services:
       - "5000:5000"
 
   ftc:
+    image: tomyj/root-you:ftc
+    container_name: root-you-ftc
     build:
       context: ./ftc
       dockerfile: Dockerfile
