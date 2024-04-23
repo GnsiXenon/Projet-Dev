@@ -83,8 +83,8 @@ func main() {
 	http.HandleFunc("/submit-flag", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodPost {
 			var data struct {
-				IdUser  int    `json:"id-user"`
-				IdChall int    `json:"id-chall"`
+				UserId  int    `json:"user-id"`
+				ChallId int    `json:"chall-id"`
 				Flag    string `json:"flag"`
 			}
 			if err := json.NewDecoder(r.Body).Decode(&data); err != nil {
@@ -99,10 +99,10 @@ func main() {
 				return
 			}
 			defer dbConn.Close()
-			result, err := db.SubmitFlag(dbConn, data.IdUser, data.IdChall, data.Flag)
+			result, err := db.SubmitFlag(dbConn, data.UserId, data.ChallId, data.Flag)
 			if err != nil {
-				log.Printf("db.SubmitFlag(dbConn, data.IdUser, data.IdChall, data.Flag): %v", err)
-				http.Error(w, fmt.Sprintf("db.SubmitFlag(dbConn, data.IdUser, data.IdChall, data.Flag): %v", err), http.StatusInternalServerError)
+				log.Printf("db.SubmitFlag(dbConn, data.UserId, data.ChallId, data.Flag): %v", err)
+				http.Error(w, fmt.Sprintf("db.SubmitFlag(dbConn, data.UserId, data.ChallId, data.Flag): %v", err), http.StatusInternalServerError)
 				return
 			}
 			if result {
