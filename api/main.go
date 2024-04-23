@@ -28,7 +28,7 @@ func main() {
 				return
 			}
 			defer dbConn.Close()
-			isLog, err := db.Login(dbConn, user.Name, user.Password)
+			isLog, err := db.Login(dbConn, user.Mail, user.Password)
 			if err != nil {
 				log.Printf("db.Login(dbConn, user.Name, user.Password): %v", err)
 				http.Error(w, fmt.Sprintf("db.Login(dbConn, user.Name, user.Password): %v", err), http.StatusInternalServerError)
@@ -69,6 +69,7 @@ func main() {
 				http.Error(w, fmt.Sprintf("db.GetConn(): %v", err), http.StatusInternalServerError)
 				return
 			}
+			defer dbConn.Close()
 			if err := db.Register(dbConn, &user); err != nil {
 				log.Printf("db.Register(dbConn, &user): %v", err)
 				http.Error(w, fmt.Sprintf("db.Register(dbConn, &user): %v", err), http.StatusInternalServerError)
