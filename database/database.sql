@@ -1,0 +1,11 @@
+CREATE TABLE User (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    mail VARCHAR(100),
+    hash VARCHAR(255)
+);
+
+CREATE TABLE Challenge (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    flag VARCHAR(100)
+);
