@@ -1,4 +1,4 @@
-module github.com/GnsiXenon/Projet-Dev
+module github.com/GnsiXenon/Projet-Dev/api
 
 go 1.18
 
