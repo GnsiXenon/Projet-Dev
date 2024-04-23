@@ -98,6 +98,7 @@ func main() {
 				http.Error(w, fmt.Sprintf("db.GetConn(): %v", err), http.StatusInternalServerError)
 				return
 			}
+			defer dbConn.Close()
 			result, err := db.SubmitFlag(dbConn, data.IdUser, data.IdChall, data.Flag)
 			if err != nil {
 				log.Printf("db.SubmitFlag(dbConn, data.IdUser, data.IdChall, data.Flag): %v", err)
