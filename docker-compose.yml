@@ -1,0 +1,23 @@
+services:
+  database:
+    image: tomyj/root-you:database
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    container_name: root-you-database
+    ports:
+      - "3306:3306"
+    volumes:
+          - mysql_data:/var/lib/mysql
+
+  api:
+    image: tomyj/root-you:api
+    container_name: root-you-api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "3232:3232"
+
+volumes:
+  mysql_data:
