@@ -106,11 +106,11 @@ func main() {
 				return
 			}
 			switch result {
-			case -1:
+			case 1:
 				w.Write([]byte(`{"message": "success"}`))
 			case 0:
 				w.Write([]byte(`{"message": "already flagged"}`))
-			case 1:
+			case -1:
 				w.Write([]byte(`{"message": "failed"}`))
 			}
 		} else {
