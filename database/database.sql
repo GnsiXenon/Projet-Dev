@@ -2,7 +2,8 @@ CREATE TABLE User (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50),
     mail VARCHAR(100),
-    hash VARCHAR(255)
+    hash VARCHAR(255),
+    score INT
 );
 
 CREATE TABLE Challenge (
