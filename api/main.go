@@ -105,9 +105,12 @@ func main() {
 				http.Error(w, fmt.Sprintf("db.SubmitFlag(dbConn, data.UserId, data.ChallId, data.Flag): %v", err), http.StatusInternalServerError)
 				return
 			}
-			if result {
+			switch result {
+			case -1:
 				w.Write([]byte(`{"message": "success"}`))
-			} else {
+			case 0:
+				w.Write([]byte(`{"message": "already flagged"}`))
+			case 1:
 				w.Write([]byte(`{"message": "failed"}`))
 			}
 		} else {
