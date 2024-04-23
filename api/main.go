@@ -81,7 +81,38 @@ func main() {
 		}
 	})
 	http.HandleFunc("/submit-flag", func(w http.ResponseWriter, r *http.Request) {
-
+		if r.Method == http.MethodPost {
+			var data struct {
+				IdUser  int    `json:"id-user"`
+				IdChall int    `json:"id-chall"`
+				Flag    string `json:"flag"`
+			}
+			if err := json.NewDecoder(r.Body).Decode(&data); err != nil {
+				log.Printf("json.NewDecoder(r.Body).Decode(&data): %v", err)
+				http.Error(w, fmt.Sprintf("json.NewDecoder(r.Body).Decode(&data): %v", err), http.StatusInternalServerError)
+				return
+			}
+			dbConn, err := db.GetConn()
+			if err != nil {
+				log.Printf("db.GetConn(): %v", err)
+				http.Error(w, fmt.Sprintf("db.GetConn(): %v", err), http.StatusInternalServerError)
+				return
+			}
+			result, err := db.SubmitFlag(dbConn, data.IdUser, data.IdChall, data.Flag)
+			if err != nil {
+				log.Printf("db.SubmitFlag(dbConn, data.IdUser, data.IdChall, data.Flag): %v", err)
+				http.Error(w, fmt.Sprintf("db.SubmitFlag(dbConn, data.IdUser, data.IdChall, data.Flag): %v", err), http.StatusInternalServerError)
+				return
+			}
+			if result {
+				w.Write([]byte(`{"message": "success"}`))
+			} else {
+				w.Write([]byte(`{"message": "failed"}`))
+			}
+		} else {
+			http.Error(w, fmt.Sprintf("Wants request method POST, got : %s\n", r.Method), http.StatusBadRequest)
+			return
+		}
 	})
 	// Start the API
 	log.Printf("API is up on port 0.0.0.0:%s 🔥 : http://localhost:%s", ports, ports)
