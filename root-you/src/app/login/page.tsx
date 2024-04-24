@@ -22,7 +22,7 @@ export default function Login() {
                     </label>
                     <input type="password" name="password" />
                 </div>
-                <input type="submit" value="submit"/>
+                <input type="submit" value="Submit"/>
             </form>
             <Link href="/register" className="">Don't have an account, let's create one !</Link>
         </main>
