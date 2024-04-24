@@ -3,6 +3,7 @@ ENV API_HOSTNAME=api:3232
 WORKDIR /app
 COPY package-lock.json .
 COPY package.json .
+COPY . .
 RUN npm ci
 RUN npx next build
 CMD [ "npx", "next", "start", "-p", "80" ]
