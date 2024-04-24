@@ -18,6 +18,16 @@ services:
       context: ./api
       dockerfile: Dockerfile
     restart: always
+  
+  front:
+    image: tomyj/root-you:front
+    container_name: root-you-front
+    build:
+      context: ./root-you
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "80:80"
 
   gauntlet:
     build:
