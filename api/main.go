@@ -118,6 +118,32 @@ func main() {
 			return
 		}
 	})
+	http.HandleFunc("/users", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet {
+			dbConn, err := db.GetConn()
+			if err != nil {
+				log.Printf("db.GetConn(): %v", err)
+				http.Error(w, fmt.Sprintf("db.GetConn(): %v", err), http.StatusInternalServerError)
+				return
+			}
+			users, err := db.GetUsers(dbConn)
+			if err != nil {
+				log.Printf("db.GetUsers(dbConn): %v", err)
+				http.Error(w, fmt.Sprintf("db.GetUsers(dbConn): %v", err), http.StatusInternalServerError)
+				return
+			}
+			byteUsers, err := json.MarshalIndent(users, "", "	")
+			if err != nil {
+				log.Printf(`json.MarshalIndent(users, "", "	"): %v`, err)
+				http.Error(w, fmt.Sprintf(`json.MarshalIndent(users, "", "	"): %v`, err), http.StatusInternalServerError)
+				return
+			}
+			w.Write(byteUsers)
+		} else {
+			http.Error(w, fmt.Sprintf("Wants request method GET, got : %s\n", r.Method), http.StatusBadRequest)
+			return
+		}
+	})
 	// Start the API
 	log.Printf("API is up on port 0.0.0.0:%s 🔥 : http://localhost:%s", ports, ports)
 	if err := http.ListenAndServe(fmt.Sprintf(":%s", ports), nil); err != nil {
