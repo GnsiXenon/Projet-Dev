@@ -21,6 +21,9 @@ export async function POST(request: NextRequest) {
     })
     if (res.ok) {
         const resJson = await res.json()
+        if (resJson["error"]) {
+            redirect("/login")
+        }
         cookies().set("token", jwt.sign(resJson, "HaCoeur"))
         redirect("/")
     } else {
