@@ -9,12 +9,18 @@ export default function Login() {
 
     return (
         <main>
-            <form action="/">
+            <form action="/api/register" method="POST">
+                <div>
+                    <label>
+                        Username
+                    </label>
+                    <input type="text" name="name" />
+                </div>
                 <div>
                     <label>
                         Mail
                     </label>
-                    <input type="text" name="mail" />
+                    <input type="mail" name="mail" />
                 </div>
                 <div>
                     <label>
@@ -22,6 +28,7 @@ export default function Login() {
                     </label>
                     <input type="password" name="password" />
                 </div>
+                <input type="submit" value="Submit" />
             </form>
             <Link href="/login" className="">Already have an account, let's log in !</Link>
         </main>
