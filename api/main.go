@@ -119,7 +119,7 @@ func main() {
 		}
 	})
 	http.HandleFunc("/users", func(w http.ResponseWriter, r *http.Request) {
-		if r.Method != http.MethodGet {
+		if r.Method == http.MethodGet {
 			dbConn, err := db.GetConn()
 			if err != nil {
 				log.Printf("db.GetConn(): %v", err)
