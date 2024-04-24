@@ -14,7 +14,7 @@ export default function Login() {
                     <label>
                         Mail
                     </label>
-                    <input type="text" name="mail" />
+                    <input type="mail" name="mail" />
                 </div>
                 <div>
                     <label>
