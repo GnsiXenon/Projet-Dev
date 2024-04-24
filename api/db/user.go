@@ -4,8 +4,8 @@ package db
 type User struct {
 	Id       int    `json:"id-user"`
 	Name     string `json:"name"`
-	Mail     string `json:"mail"`
-	Password string `json:"password"`
-	Hash     string `json:"hash"`
+	Mail     string `json:"mail,omitempty"`
+	Password string `json:"password,omitempty"`
+	Hash     string `json:"hash,omitempty"`
 	Score    int    `json:"score"`
 }
