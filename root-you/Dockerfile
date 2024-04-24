@@ -1,5 +1,5 @@
 FROM tomyj/my-env:node
-ENV API_HOSTNAME=api
+ENV API_HOSTNAME=api:3232
 WORKDIR /app
 COPY package-lock.json .
 COPY package.json .
