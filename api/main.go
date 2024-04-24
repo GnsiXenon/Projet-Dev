@@ -126,6 +126,7 @@ func main() {
 				http.Error(w, fmt.Sprintf("db.GetConn(): %v", err), http.StatusInternalServerError)
 				return
 			}
+			defer dbConn.Close()
 			users, err := db.GetUsers(dbConn)
 			if err != nil {
 				log.Printf("db.GetUsers(dbConn): %v", err)
