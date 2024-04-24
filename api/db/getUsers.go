@@ -6,7 +6,7 @@ import (
 )
 
 func GetUsers(dbConn *sql.DB) ([]User, error) {
-	rows, err := dbConn.Query("SELECT (id, name, score) FROM User")
+	rows, err := dbConn.Query("SELECT id, name, score FROM User")
 	if err != nil {
 		return nil, fmt.Errorf(`dbConn.Query("SELECT (id, name, score) FROM User"): %v`, err)
 	}
