@@ -83,9 +83,10 @@ func main() {
 	http.HandleFunc("/submit-flag", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodPost {
 			var data struct {
-				UserId  int    `json:"user-id"`
-				ChallId int    `json:"chall-id"`
-				Flag    string `json:"flag"`
+				UserId   int    `json:"user-id"`
+				ChallId  int    `json:"chall-id"`
+				Flag     string `json:"flag"`
+				UserMail string `json:"mail"`
 			}
 			if err := json.NewDecoder(r.Body).Decode(&data); err != nil {
 				log.Printf("json.NewDecoder(r.Body).Decode(&data): %v", err)
@@ -99,20 +100,26 @@ func main() {
 				return
 			}
 			defer dbConn.Close()
-			result, err := db.SubmitFlag(dbConn, data.UserId, data.ChallId, data.Flag)
+			_, err = db.SubmitFlag(dbConn, data.UserId, data.ChallId, data.Flag)
 			if err != nil {
 				log.Printf("db.SubmitFlag(dbConn, data.UserId, data.ChallId, data.Flag): %v", err)
 				http.Error(w, fmt.Sprintf("db.SubmitFlag(dbConn, data.UserId, data.ChallId, data.Flag): %v", err), http.StatusInternalServerError)
 				return
 			}
-			switch result {
-			case 1:
-				w.Write([]byte(`{"message": "success"}`))
-			case 0:
-				w.Write([]byte(`{"message": "already flagged"}`))
-			case -1:
-				w.Write([]byte(`{"message": "failed"}`))
+			fmt.Println(data.UserMail)
+			theUser, err := db.GetUser(dbConn, data.UserMail)
+			if err != nil {
+				log.Printf("db.GetUser(dbConn, user.Mail): %v", err)
+				http.Error(w, fmt.Sprintf("db.GetUser(dbConn, user.Mail): %v", err), http.StatusInternalServerError)
+				return
 			}
+			byteUser, err := json.MarshalIndent(theUser, "", "	")
+			if err != nil {
+				log.Printf(`json.MarshalIndent(theUser, "", "	"): %v`, err)
+				http.Error(w, fmt.Sprintf(`json.MarshalIndent(theUser, "", "	"): %v`, err), http.StatusInternalServerError)
+				return
+			}
+			w.Write(byteUser)
 		} else {
 			http.Error(w, fmt.Sprintf("Wants request method POST, got : %s\n", r.Method), http.StatusBadRequest)
 			return
