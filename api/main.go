@@ -106,7 +106,6 @@ func main() {
 				http.Error(w, fmt.Sprintf("db.SubmitFlag(dbConn, data.UserId, data.ChallId, data.Flag): %v", err), http.StatusInternalServerError)
 				return
 			}
-			fmt.Println(data.UserMail)
 			theUser, err := db.GetUser(dbConn, data.UserMail)
 			if err != nil {
 				log.Printf("db.GetUser(dbConn, user.Mail): %v", err)
