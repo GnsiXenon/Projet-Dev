@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
         if (resJson["error"]) {
             redirect("/login")
         }
-        cookies().set("token", jwt.sign(resJson, "HaCoeur"))
+        cookies().set("martin_session_id", jwt.sign(resJson, "HaCoeur"))
         redirect("/")
     } else {
         return NextResponse.json({message: "wrong creds"})

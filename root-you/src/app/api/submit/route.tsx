@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     })
     if (res.ok) {
         const resBody = await res.json()
-        cookies().set("token", jwt.sign(resBody, "HaCoeur"))
+        cookies().set("martin_session_id", jwt.sign(resBody, "HaCoeur"))
         redirect("/")
     } else {
         return NextResponse.json({message: "an error happend"})

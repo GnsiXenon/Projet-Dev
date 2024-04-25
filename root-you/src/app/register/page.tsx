@@ -2,8 +2,8 @@ import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 import Link from "next/link"
 
-export default function Login() {
-    if (cookies().get("token")) {
+export default function Register() {
+    if (cookies().get("martin_session_id")) {
         redirect("/")
     }
 

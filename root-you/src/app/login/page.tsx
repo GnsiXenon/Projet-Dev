@@ -3,7 +3,7 @@ import { redirect } from "next/navigation"
 import Link from "next/link"
 
 export default function Login() {
-    if (cookies().get("token")) {
+    if (cookies().get("martin_session_id")) {
         redirect("/")
     }
 

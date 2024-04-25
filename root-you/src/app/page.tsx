@@ -6,14 +6,14 @@ import { headers } from "next/headers"
 var jwt = require('jsonwebtoken')
 
 export default async function Home() {
-  if (!cookies().get("token")) {
+  if (!cookies().get("martin_session_id")) {
     redirect("/login")
   }
 
   let decoded
 
   try {
-    let token = cookies().get("token")?.value
+    let token = cookies().get("martin_session_id")?.value
     decoded = jwt.verify(token, 'HaCoeur');
   } catch(err) {
     redirect("/api/disconnect")
