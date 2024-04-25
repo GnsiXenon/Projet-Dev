@@ -22,19 +22,22 @@ export default async function Home() {
   const hostname = headers().get("host")?.split(":")[0]
 
   return (
-    <main>
-      <h1 className="text-7xl font-bold">RootYou</h1>
-      <h2>Welcome {decoded.name}</h2>
-      <p>You have {decoded.score} points</p>
-      <Link className="text-red-700 border-[2px] border-red-700 p-4 rounded-xl" href="/api/disconnect">Disconnect</Link>
+    <main className="flex flex-col justify-start gap-3">
+      <nav className="w-full flex flex-row justify-between items-center h-20 border-b-white border-b-[2px] bg-gray-500/30 backdrop-blur-sm">
+        <h1 className="relative left-3 text-7xl font-bold">RootYou</h1>
+        <Link className="relative right-3 text-red-700 border-[2px] border-red-700 p-4 rounded-xl" href="/api/disconnect">Disconnect</Link>
+      </nav>
       <div className="flex flex-col">
+        <h2>Welcome {decoded.name}</h2>
+        <p>You have {decoded.score} points</p>
         <form className="flex flex-col" action="/api/submit" method="POST">
           <label>Gauntlet</label>
           <Link href={`http://${hostname}:5000`}>Start challenge</Link>
           <div>
             <input type="hidden" name="chall-id" value="1" />
             <input  type="hidden" name="user-id" value={decoded["id-user"]} />
-            <input type="text" name="flag" />
+            <input  type="hidden" name="mail" value={decoded["mail"]} />
+            <input type="text" name="flag" className="text-black" />
             <input type="submit" value="Submit" />
           </div>
         </form>
@@ -45,7 +48,8 @@ export default async function Home() {
           <div>
             <input type="hidden" name="chall-id" value="2" />
             <input type="hidden" name="user-id" value={decoded["id-user"]} />
-            <input type="text" name="flag" />
+            <input  type="hidden" name="mail" value={decoded["mail"]} />
+            <input type="text" name="flag" className="text-black" />
             <input type="submit" value="Submit" />
           </div>
         </form>
