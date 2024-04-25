@@ -32,7 +32,9 @@ export default async function Home() {
           <label>Gauntlet</label>
           <Link href={`http://${hostname}:5000`}>Start challenge</Link>
           <div>
-            <input type="text" id="1" />
+            <input type="hidden" name="chall-id" value="1" />
+            <input  type="hidden" name="user-id" value={decoded["id-user"]} />
+            <input type="text" name="flag" />
             <input type="submit" value="Submit" />
           </div>
         </form>
@@ -41,7 +43,9 @@ export default async function Home() {
           <Link href={`http://${hostname}:5001`}>Start challenge</Link>
           <Link href="./ftc.zip">ftc.zip</Link>
           <div>
-            <input type="text" id="2" />
+            <input type="hidden" name="chall-id" value="2" />
+            <input type="hidden" name="user-id" value={decoded["id-user"]} />
+            <input type="text" name="flag" />
             <input type="submit" value="Submit" />
           </div>
         </form>
