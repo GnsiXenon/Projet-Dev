@@ -14,19 +14,19 @@ export default function Login() {
                     <label>
                         Username
                     </label>
-                    <input type="text" name="name" />
+                    <input type="text" name="name" className="text-black" />
                 </div>
                 <div>
                     <label>
                         Mail
                     </label>
-                    <input type="mail" name="mail" />
+                    <input type="mail" name="mail" className="text-black" />
                 </div>
                 <div>
                     <label>
                         Password
                     </label>
-                    <input type="password" name="password" />
+                    <input type="password" name="password" className="text-black" />
                 </div>
                 <input type="submit" value="Submit" />
             </form>
