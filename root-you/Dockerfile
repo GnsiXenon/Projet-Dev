@@ -5,5 +5,4 @@ COPY package-lock.json .
 COPY package.json .
 COPY . .
 RUN npm ci
-RUN npx next build
 CMD [ "npx", "next", "dev", "-p", "80" ]
