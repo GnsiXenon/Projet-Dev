@@ -5,10 +5,10 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: root-you-database
-    ports:
-      - "3306:3306"
     volumes:
           - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
 
 volumes:
   mysql_data:

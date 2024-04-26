@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from "next"
+import "./globals.css"
+import Image from "next/image"
+import Bg from "@/../public/bg.png"
 
 export const metadata: Metadata = {
   title: "RootYou",
-  description: "",
+  description: "CTF training plateform",
 };
 
 export default function RootLayout({
@@ -13,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="text-white">
+        <Image src={Bg} alt="bg.png" className="z-[-1] absolute top-0 left-0" />
+        {children}
+      </body>
     </html>
   );
 }

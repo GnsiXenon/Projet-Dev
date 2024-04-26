@@ -1,0 +1,10 @@
+services:
+  api:
+    image: tomyj/root-you:api
+    container_name: root-you-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3232:3232"
