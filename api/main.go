@@ -151,30 +151,6 @@ func main() {
 			return
 		}
 	})
-	http.HandleFunc("/delete-user", func(w http.ResponseWriter, r *http.Request) {
-		if r.Method == http.MethodDelete {
-			user := db.User{}
-			if err := json.NewDecoder(r.Body).Decode(&user); err != nil {
-				http.Error(w, fmt.Sprintf("json.NewDecoder(r.Body).Decode(&user): %v", err), http.StatusInternalServerError)
-				return
-			}
-			dbConn, err := db.GetConn()
-			if err != nil {
-				log.Printf("db.GetConn(): %v", err)
-				http.Error(w, fmt.Sprintf("db.GetConn(): %v", err), http.StatusInternalServerError)
-				return
-			}
-			defer dbConn.Close()
-			if err := db.DeleteUser(dbConn, &user.Id); err != nil {
-				log.Printf("db.DeleteUser(dbConn, &user.Id): %v", err)
-				http.Error(w, fmt.Sprintf("db.DeleteUser(dbConn, &user.Id): %v", err), http.StatusInternalServerError)
-				return
-			}
-		} else {
-			http.Error(w, fmt.Sprintf("Wants request method DELETE, got : %s\n", r.Method), http.StatusBadRequest)
-			return
-		}
-	})
 	http.HandleFunc("/update-username", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodPut {
 			user := db.User{}
