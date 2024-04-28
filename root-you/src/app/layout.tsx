@@ -1,7 +1,5 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import Image from "next/image"
-import Bg from "@/../public/bg.png"
 
 export const metadata: Metadata = {
   title: "RootYou",
@@ -15,8 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="text-white">
-        <Image src={Bg} alt="bg.png" className="z-[-1] absolute top-0 left-0" />
+      <body className="text-white" style={{backgroundImage: `url('/bg.png')`}}>
         {children}
       </body>
     </html>
