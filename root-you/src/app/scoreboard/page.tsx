@@ -4,7 +4,8 @@ export default async function ScoreBoard() {
         apiHostname = process.env.API_HOSTNAME
     }
     const resp = await fetch(`http://${apiHostname}/users`, {
-        method: "GET"
+        method: "GET",
+        cache: "no-cache"
     })
     var data
     if (resp.ok) {
