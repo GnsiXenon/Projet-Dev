@@ -25,6 +25,10 @@ export default async function Home() {
     <main className="flex flex-col justify-start gap-3">
       <nav className="w-full flex flex-row justify-between items-center h-20 border-b-white border-b-[2px] bg-gray-500/30 backdrop-blur-sm">
         <h1 className="relative left-3 text-7xl font-bold">RootYou</h1>
+        <form action="/api/delete-user" method="POST">
+          <input type="hidden" name="mail" value={decoded.mail} />
+          <input className="text-red-700" type="submit" value="Delete account" />
+        </form>
         <Link className="relative right-3 text-red-700 border-[2px] border-red-700 p-4 rounded-xl" href="/api/disconnect">Disconnect</Link>
       </nav>
       <div className="flex flex-col">
