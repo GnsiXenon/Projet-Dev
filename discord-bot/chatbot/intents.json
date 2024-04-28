@@ -1,0 +1,246 @@
+{
+    "intents": [
+      {
+        "tag": "salutations",
+        "patterns": [
+          "bonjour",
+          "comment allez-vous ?",
+          "y a-t-il quelqu'un ?",
+          "salut",
+          "bonne journée",
+          "salut",
+          "slt",
+          "bjr",
+          "hey",
+          "yo",
+          "hi",
+          "bonjour",
+          "bonsoir"
+        ],
+        "responses": [
+          "Bonjour !",
+          "Ravi de vous revoir !",
+          "Bonjour, comment puis-je vous aider ?"
+        ]
+      },
+      {
+        "tag": "feelings",
+        "patterns": [
+            "ca va",
+            "comment ça va ?",
+            "comment vas-tu ?",
+            "comment ça se passe ?",
+            "comment te sens-tu ?",
+            "comment tu te sens ?",
+            "comment ça va aujourd'hui ?",
+            "comment vas-tu aujourd'hui ?",
+            "comment ça se passe aujourd'hui ?",
+            "comment te sens-tu aujourd'hui ?",
+            "comment tu te sens aujourd'hui ?"
+        ],
+        "responses": [
+            "Je vais bien, merci de demander !",
+            "Je vais bien, merci !",
+            "Je vais bien",
+            "Je vais bien, Comment puis-je vous aider ?"
+        ]
+      },
+      {
+        "tag": "au_revoir",
+        "patterns": [
+          "au revoir",
+          "a plus tard",
+          "a +",
+          "bye",
+            "ciao",
+            "a bientôt",
+            "a la prochaine",
+            "a demain",
+            "a plus",
+            "a tout à l'heure",
+            "a tout de suite",
+            "a la revoyure",
+            "a la prochaine",
+            "a la prochaine fois"
+        ],
+        "responses": [
+          "À bientôt !",
+          "Passez une excellente journée !",
+          "Au revoir! Revenez bientôt."
+        ]
+      },
+      {
+        "tag": "merci",
+        "patterns": [
+          "merci",
+          "je vous remercie",
+          "c'est utile"
+        ],
+        "responses": [
+          "De rien !",
+          "Avec plaisir !",
+          "Tout le plaisir est pour moi"
+        ]
+      },
+      {
+        "tag": "pas_de_réponse",
+        "patterns": [],
+        "responses": [
+          "Désolé, je ne comprends pas",
+          "Pouvez-vous me donner plus d'informations ?",
+          "Je ne suis pas sûr de comprendre"
+        ]
+      },
+      {
+        "tag": "options",
+        "patterns": [
+          "comment pouvez-vous m'aider ?",
+          "que pouvez-vous faire ?",
+          "quelle aide pouvez-vous fournir ?",
+          "en quoi pouvez-vous être utile ?",
+          "tu sais faire quoi ?",
+          "tfq",
+          "j'ai besoin d'aide.",
+          "que puis-je faire ici ?",
+          "quelles sont tes fonctionnalités ?",
+          "en quoi peux-tu m'être utile ?",
+          "je suis perdu, peux-tu m'aider ?",
+          "que peux-tu me dire sur toi ?",
+          "quelles sont tes options ?",
+          "y a-t-il des choses que tu peux faire ?",
+          "quels sont tes services ?",
+          "quels sont tes domaines de compétence ?",
+          "quels sont tes champs d'action ?"
+        ],
+        "responses": [
+          "Je peux vous guider à travers les admissions, les programmes académiques, la vie étudiante, l'aide financière et les services aux étudiants (comment je puis-je m'inscrire ?) ",
+          "Je peux vous aider avec les admissions, les programmes académiques, la vie étudiante, l'aide financière et les services aux étudiants (comment je puis-je m'inscrire ?) ",
+          "Je peux fournir des informations sur les admissions, les programmes académiques, la vie étudiante, l'aide financière et les services aux étudiants (comment je puis-je m'inscrire ?)"
+        ]
+      },
+      {
+        "tag": "admissions",
+        "patterns": [
+          "comment faire une demande d'admission ?",
+          "quel est le processus d'admission ?",
+          "quels sont les critères d'admissibilité ?",
+          "quels sont les documents requis pour l'admission ?",
+          "comment je puis-je m'inscrire ?",
+          "comment je puis-je m'inscrire au collège ?",
+          "comment je puis-je m'inscrire à l'université ?",
+          "comment je puis-je m'inscrire à l'école ?",
+          "comment je puis-je m'inscrire à l'établissement ?",
+          "comment postuler ?" ,
+          "processus d'admission ?" ,
+          "critères d'admission ?" ,
+          "documents requis ?" ,
+          "inscription",
+          "admission"
+        ],
+        "responses": [
+            "Vous pouvez commencez votre demande d'admission avec le bot en lui demandant de vous guider à travers le processus d'admission",
+            "Le processus d'admission comprend plusieurs étapes, y compris la soumission d'une demande en ligne, la soumission de documents requis et l'entrevue d'admission",
+            "Vous nécessitez d'un code de parrainage pour vous inscrire, n'hésite pas à demander à un élève ou à moi(bot)."                                                                                                                                               
+          ]
+      },
+      {
+        "tag": "programmes_academiques",
+        "patterns": [
+          "quels programmes le collège propose-t-il ?",
+          "quels sont les départements universitaires du collège ?",
+          "quelle est la taille des classes ?",
+          "quel est le ratio étudiants-professeurs ?"
+        ],
+        "responses": [
+          "Le collège propose une large gamme de programmes dans divers domaines d'études. Veuillez visiter le site Web du collège pour une liste complète des programmes",
+          "Le collège possède des départements universitaires dans des domaines tels que les affaires, l'ingénierie, les arts et sciences et les sciences de la santé",
+          "La taille des classes varie en fonction du programme et du cours. Certaines classes sont petites et interactives, tandis que d'autres sont plus grandes et basées sur des cours magistraux",
+          "Le ratio étudiants-professeurs au collège est de 15:1, ce qui signifie que les étudiants ont la possibilité de travailler en étroite collaboration avec leurs professeurs"
+        ]
+      },
+     {
+        "tag": "vie_etudiante",
+        "patterns": [
+          "a quoi ressemble la vie étudiante au collège ?",
+          "y a-t-il des clubs et organisations sur le campus ?",
+          "quelles équipes sportives",
+        "quels événements et activités sont organisés pour les étudiants ?",
+        "association",
+        "club",
+        "organisation",
+        "équipe",
+        "bde"
+        ],
+        "responses": [
+          "La vie étudiante au collège est dynamique et diversifiée. Il y a de nombreux clubs et organisations sur le campus, allant des clubs académiques aux clubs culturels et aux clubs de loisirs",
+          "Le collège a une variété d'équipes sportives, y compris le football, le basketball, le volleyball, le soccer et le tennis",
+          "Le collège organise régulièrement des événements et des activités pour les étudiants, tels que des fêtes, des concerts, des conférences et des ateliers",
+          "Le collège possède une association étudiante 'HaCoeur' active qui organise des événements et des activités pour les étudiants intéressés à la cybersécurité"
+        ]
+      },
+      {
+        "tag": "hacoeur_info",
+        "patterns": [
+            "hacoeur",
+            "hacoeur ?",
+            "donne moi des informations sur hacoeur",
+            "qui est hacoeur ?",
+            "c'est quoi hacoeur ?",
+            "hacoeur c'est quoi ?",
+            "hacoeur c'est qui ?",
+            "hacoeur c'est une association ?",
+            "hacoeur c'est une organisation ?",
+            "hacoeur c'est une équipe ?",
+            "hacoeur c'est une équipe de quoi ?"
+        ],
+        "responses": [
+            "HaCoeur est une association étudiante du collège qui se concentre sur la cybersécurité et la sécurité informatique",
+            "HaCoeur organise des ateliers, des conférences et des compétitions pour les étudiants intéressés par la cybersécurité",
+            "HaCoeur est une communauté d'étudiants passionnés par la cybersécurité et la sécurité informatique",
+            "HaCoeur est une équipe de capture du drapeau (CTF) qui participe à des compétitions de cybersécurité et de hacking éthique"
+         ]
+      },
+      {
+        "tag": "code_parrainage",
+        "patterns": [
+            "code de parrainage",
+            "code de parrainage ?",
+            "code de parrainage pour l'inscription",
+            "code de parrainage pour l'admission",
+            "code de parrainage pour l'inscription au collège",
+            "code de parrainage pour l'inscription à l'université",
+            "code de parrainage pour l'inscription à l'école",
+            "code de parrainage pour l'inscription à l'établissement",
+            "code de parrainage pour l'inscription à l'établissement scolaire",
+            "code de parrainage pour l'inscription à l'établissement universitaire",
+            "code de parrainage pour l'inscription à l'établissement d'enseignement",
+            "code de parrainage pour l'inscription à l'établissement d'enseignement supérieur",
+            "code de parrainage pour l'inscription à l'établissement d'enseignement supérieur",
+            "code"
+        ],
+        "responses": [
+            "Chaque association possède un code de parrainage unique qui vous permet de vous inscrire à l'association.Si vous souhaitez vous inscrire à une association, n'hésitez pas à demander un code de parrainage à un membre de l'association ou à moi(bot).",
+            "Chaque élève possède un code de parrainage unique qui vous permet de vous inscrire au collège. Si vous souhaitez vous inscrire au collège, n'hésitez pas à demander un code de parrainage à un élève ou à moi(bot)."
+        ]
+      },
+      {
+        "tag": "code_hacoeur",
+        "patterns": [
+            "code hacoeur",
+            "code hacoeur ?",
+            "code hacoeur pour l'inscription",
+            "code hacoeur pour l'admission",
+            "code hacoeur pour l'inscription au collège",
+            "donne moi le code hacoeur",
+            "code hacoeur pour l'inscription à l'université"
+        ],
+        "responses": [
+            "Le code de parrainage pour HaCoeur est 'HaCoeur{B0T_N0T_A1}'. Vous pouvez utiliser ce code pour vous inscrire à HaCoeur et participer à ses activités et événements",
+            "Le code de parrainage pour HaCoeur est 'w2r@6FCLq_%0}_%0p`N'. Vous pouvez utiliser ce code pour vous inscrire à HaCoeur et participer à ses activités et événements",
+            "Le code de parrainage pour HaCoeur est '87=l(AT`$?682AG:,#XS5r!c'. Vous pouvez utiliser ce code pour vous inscrire à HaCoeur et participer à ses activités et événements",
+            "Le code de parrainage pour HaCoeur est '⠓⠁⠉⠕⠑⠥⠗{⠃⠴⠞⠸⠝⠴⠞⠸⠁⠂}'. Vous pouvez utiliser ce code pour vous inscrire à HaCoeur et participer à ses activités et événements"
+        ]
+      }
+    ]
+}
+  

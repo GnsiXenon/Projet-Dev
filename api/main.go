@@ -151,6 +151,30 @@ func main() {
 			return
 		}
 	})
+	http.HandleFunc("/update-username", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method == http.MethodPut {
+			user := db.User{}
+			if err := json.NewDecoder(r.Body).Decode(&user); err != nil {
+				http.Error(w, fmt.Sprintf("json.NewDecoder(r.Body).Decode(&user): %v", err), http.StatusInternalServerError)
+				return
+			}
+			dbConn, err := db.GetConn()
+			if err != nil {
+				log.Printf("db.GetConn(): %v", err)
+				http.Error(w, fmt.Sprintf("db.GetConn(): %v", err), http.StatusInternalServerError)
+				return
+			}
+			defer dbConn.Close()
+			if err := db.UpdateUsername(dbConn, &user.Id, user.Name); err != nil {
+				log.Printf("db.UpdateUsername(dbConn, &user.Id, user.Name): %v", err)
+				http.Error(w, fmt.Sprintf("db.UpdateUsername(dbConn, &user.Id, user.Name): %v", err), http.StatusInternalServerError)
+				return
+			}
+		} else {
+			http.Error(w, fmt.Sprintf("Wants request method PUT, got : %s\n", r.Method), http.StatusBadRequest)
+			return
+		}
+	})
 	// Start the API
 	log.Printf("API is up on port 0.0.0.0:%s 🔥 : http://localhost:%s", ports, ports)
 	if err := http.ListenAndServe(fmt.Sprintf(":%s", ports), nil); err != nil {
