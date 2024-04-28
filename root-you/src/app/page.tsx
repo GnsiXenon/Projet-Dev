@@ -22,9 +22,9 @@ export default async function Home() {
   const hostname = headers().get("host")?.split(":")[0]
 
   return (
-    <main className="flex flex-col justify-start gap-3 text-2xl">
-      <nav className="w-full flex flex-row justify-between items-center h-20 border-b-white border-b-[2px] bg-gray-500/30 backdrop-blur-sm">
-        <h1 className="relative left-3 text-7xl font-bold">RootYou</h1>
+    <main className="flex flex-col justify-start gap-10 text-2xl">
+      <nav className="w-full flex flex-row flex-wrap justify-between items-center py-7 px-6 border-b-white border-b-[2px] bg-gray-500/30 backdrop-blur-sm">
+        <h1 className="relative text-7xl font-bold">RootYou</h1>
         <Link href="/scoreboard">Scoreboard</Link>
         <form action="/api/delete-user" method="POST">
           <input type="hidden" name="mail" value={decoded.mail} />
@@ -32,7 +32,7 @@ export default async function Home() {
         </form>
         <Link className="relative right-3 text-red-700 border-[2px] border-red-700 p-4 rounded-xl" href="/api/disconnect">Disconnect</Link>
       </nav>
-      <div className="flex flex-col">
+      <div className="flex flex-col relative">
         <div className="w-full flex flex-col justify-center items-center">
           <h2 className="text-5xl font-bold">Welcome : {decoded.name}</h2>
           <p>You have {decoded.score} points</p>
