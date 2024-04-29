@@ -89,6 +89,17 @@ export default async function Home() {
               <input type="submit" value="Submit" className="p-2 border-2 rounded-lg" />
             </div>
           </form>
+          <form className="w-[90%] bg-green-500/30 flex flex-col justify-center items-start gap-3 p-4 rounded-lg backdrop-blur-sm" action="/api/submit" method="POST">
+            <h3 className="text-3xl font-bold">Tom's a Hacker</h3>
+            <Link href="/reverse.zip">Start challenge</Link>
+            <div className="w-[70vw] flex flex-col justify-center items-start gap-3">
+              <input type="hidden" name="chall-id" value="5" />
+              <input type="hidden" name="user-id" value={decoded["id-user"]} />
+              <input  type="hidden" name="mail" value={decoded["mail"]} />
+              <input type="text" name="flag" className="text-black w-full rounded-lg p-2" />
+              <input type="submit" value="Submit" className="p-2 border-2 rounded-lg" />
+            </div>
+          </form>
         </div>
       </div>
     </main>
