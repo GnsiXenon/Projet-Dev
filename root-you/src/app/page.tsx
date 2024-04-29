@@ -47,6 +47,7 @@ export default async function Home() {
               <input  type="hidden" name="mail" value={decoded["mail"]} />
               <input type="text" name="flag" className="text-black w-full rounded-lg p-2" />
               <input type="submit" value="Submit" className="p-2 border-2 rounded-lg" />
+              <Link href="/solution-gauntlet.py">Solution</Link>
             </div>
           </form>
           <form className="w-[90%] bg-green-500/30 flex flex-col justify-center items-start gap-3 p-4 rounded-lg backdrop-blur-sm" action="/api/submit" method="POST">
@@ -59,6 +60,7 @@ export default async function Home() {
               <input  type="hidden" name="mail" value={decoded["mail"]} />
               <input type="text" name="flag" className="text-black w-full rounded-lg p-2" />
               <input type="submit" value="Submit" className="p-2 border-2 rounded-lg" />
+              <Link href="/solution-ftc.md">Solution</Link>
             </div>
           </form>
           <form className="w-[90%] bg-green-500/30 flex flex-col justify-center items-start gap-3 p-4 rounded-lg backdrop-blur-sm" action="/api/submit" method="POST">
