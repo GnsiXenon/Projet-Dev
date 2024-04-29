@@ -139,5 +139,3 @@ class Renderer(object):
 So this class renders the content of a reminder to HTML by using the escape function, the thing is we have "format" that's called twice on the user input. Once in `htmlTemplate` with the use of the `f"<string>"` and then at the return statement using `.format(self=self)`.
 
 This allows any user that inputs a reminder to see its input rendered. Using the `self` keyword we can retrieve the flag with the following payload `{self.coordinates}` (as the coordinates have been set in the constructor of the object).
-
-![flag](img/panel_flag.png)
