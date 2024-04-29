@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2024-04-12" view-index="0" gantt-divider-location="1308" resource-divider-location="567" version="3.3.3307" locale="en_GB">
+    <description/>
+    <view zooming-state="default:0" id="gantt-chart">
+        <field id="tpd15" name="Notes" width="20" order="-1"/>
+        <field id="tpd3" name="Name" width="746" order="0"/>
+        <field id="tpd4" name="Begin date" width="280" order="1"/>
+        <field id="tpd5" name="End date" width="281" order="2"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="filter.dueTodayTasks" value="false"/>
+        <option id="filter.overdueTasks" value="false"/>
+        <option id="filter.inProgressTodayTasks" value="false"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="344" order="0"/>
+        <field id="1" name="Default role" width="219" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" uid="0bf6f518c38d43e88036c05ebf4c71af" name="Conception challenge ransomware" meeting="false" start="2024-04-16" duration="10" complete="100" expand="true"/>
+        <task id="1" uid="5674daafe8584646b93e26e58b9ff595" name="Conception challenge bot discord" meeting="false" start="2024-04-16" duration="10" complete="100" expand="true"/>
+        <task id="15" uid="44c7bee1b45e475aae884779b36f8ece" name="Conception challenge OSINT" meeting="false" start="2024-04-16" duration="9" complete="100" expand="true"/>
+        <task id="2" uid="710c7ee2fa3c4246995a4e32bccf8899" name="Conception MLD BDD" meeting="false" start="2024-04-16" duration="1" complete="100" expand="true"/>
+        <task id="3" uid="5f73cf482c2e48a6b919a1cab659d48f" name="Montage de la base de données" meeting="false" start="2024-04-16" duration="1" complete="100" expand="true"/>
+        <task id="9" uid="6a6d9347881846a69f9535776f3e64c7" name="Conception challenges WEB" meeting="false" start="2024-04-16" duration="5" complete="100" expand="true"/>
+        <task id="5" uid="4d819d108ecb4419989f6e18c6bd576c" name="Implem API - endpoint login" meeting="false" start="2024-04-18" duration="1" complete="100" expand="true"/>
+        <task id="10" uid="ca97c0adc55a4564b281a9cc78849278" name="Implem API - endpoint register" color="#8cb6ce" meeting="false" start="2024-04-19" duration="1" complete="100" expand="true"/>
+        <task id="11" uid="a0df190ea0ce494c973156d7bbc65fb1" name="Implem API - endpoint Users" color="#8cb6ce" meeting="false" start="2024-04-19" duration="1" complete="100" expand="true"/>
+        <task id="13" uid="827e62e01eb44b41b15b6e8c06b3258a" name="Implem API - endpoint Delete users" color="#8cb6ce" meeting="false" start="2024-04-22" duration="1" complete="100" expand="true"/>
+        <task id="12" uid="12fd5d651c8a49098ae58b85e88009ce" name="Implem API - endpoint submit-flag" color="#8cb6ce" meeting="false" start="2024-04-22" duration="1" complete="100" expand="true"/>
+        <task id="6" uid="f1a9d28a19b444bab7607a3c45646aba" name="Implem Front en Next Js" meeting="false" start="2024-04-23" duration="4" complete="100" expand="true"/>
+        <task id="14" uid="4d1d6d893e4f4c19bf01489ea6bffd6e" name="Relier Server de front avec API" meeting="false" start="2024-04-25" duration="2" complete="100" expand="true"/>
+        <task id="8" uid="ac7cddd1a76f4f418901fac5dfa81e9b" name="Faire solution challenge" meeting="false" start="2024-04-26" duration="1" complete="100" expand="true"/>
+        <task id="4" uid="6b4f68f17dc248cd8a5b6bae5207fe97" name="Dockerisation" meeting="false" start="2024-04-26" duration="1" complete="100" expand="true"/>
+        <task id="7" uid="fe656e0284774c1988a6c8ac78c3c62d" name="Diaporama" meeting="false" start="2024-04-29" duration="1" complete="90" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="0" name="Tom Jegou" function="SoftwareDevelopment:2" contacts="" phone=""/>
+        <resource id="1" name="Kylian Oger" function="SoftwareDevelopment:2" contacts="" phone=""/>
+        <resource id="2" name="Tom Saillard" function="SoftwareDevelopment:2" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="2" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="3" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="4" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="5" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="6" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="7" resource-id="0" function="SoftwareDevelopment:3" responsible="true" load="100.0"/>
+        <allocation task-id="10" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="11" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="12" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="13" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="14" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="9" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="8" resource-id="0" function="SoftwareDevelopment:3" responsible="true" load="100.0"/>
+        <allocation task-id="1" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="7" resource-id="1" function="SoftwareDevelopment:3" responsible="false" load="100.0"/>
+        <allocation task-id="0" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+        <allocation task-id="7" resource-id="2" function="SoftwareDevelopment:3" responsible="false" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>
