@@ -1,0 +1,113 @@
+{
+    "endpoints": [
+      {
+        "path": "/login",
+        "method": "POST",
+        "description": "Endpoint for user authentication",
+        "request": {
+          "body": {
+            "mail": "string",
+            "password": "string"
+          }
+        },
+        "response": {
+          "success": {
+            "user": {
+              "id": "int",
+              "name": "string",
+              "mail": "string",
+              "score": "int"
+            }
+          },
+          "error": {
+            "message": "string"
+          }
+        }
+      },
+      {
+        "path": "/register",
+        "method": "POST",
+        "description": "Endpoint for user registration",
+        "request": {
+          "body": {
+            "name": "string",
+            "mail": "string",
+            "password": "string"
+          }
+        },
+        "response": {
+          "success": {
+            "message": "string"
+          },
+          "error": {
+            "message": "string"
+          }
+        }
+      },
+      {
+        "path": "/submit-flag",
+        "method": "POST",
+        "description": "Endpoint for submitting challenge flags",
+        "request": {
+          "body": {
+            "user-id": "int",
+            "chall-id": "int",
+            "flag": "string",
+            "mail": "string"
+          }
+        },
+        "response": {
+          "success": {
+            "user": {
+              "id": "int",
+              "name": "string",
+              "mail": "string",
+              "score": "int"
+            }
+          },
+          "error": {
+            "message": "string"
+          }
+        }
+      },
+      {
+        "path": "/users",
+        "method": "GET",
+        "description": "Endpoint for retrieving all users",
+        "response": {
+          "success": {
+            "users": [
+              {
+                "id": "int",
+                "name": "string",
+                "mail": "string",
+                "score": "int"
+              }
+            ]
+          },
+          "error": {
+            "message": "string"
+          }
+        }
+      },
+      {
+        "path": "/delete-user",
+        "method": "POST",
+        "description": "Endpoint for deleting a user",
+        "request": {
+          "body": {
+            "mail": "string"
+          }
+        },
+        "response": {
+          "success": {
+            "message": "string"
+          },
+          "error": {
+            "message": "string"
+          }
+        }
+      }
+    ]
+  }
+  
