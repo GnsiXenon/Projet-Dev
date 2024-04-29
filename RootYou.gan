@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="RootYou" company="HaCoeur" webLink="" view-date="2024-04-12" view-index="0" gantt-divider-location="1308" resource-divider-location="567" version="3.3.3307" locale="en_GB">
+<?xml version="1.0" encoding="UTF-8"?><project name="RootYou" company="HaCoeur" webLink="" view-date="2024-04-12" view-index="1" gantt-divider-location="494" resource-divider-location="567" version="3.3.3307" locale="en_GB">
     <description><![CDATA[Meilleure Association de Cybersécurité]]></description>
     <view zooming-state="default:0" id="gantt-chart">
-        <field id="tpd3" name="Name" width="746" order="0"/>
-        <field id="tpd4" name="Begin date" width="280" order="1"/>
-        <field id="tpd5" name="End date" width="281" order="2"/>
+        <field id="tpd3" name="Name" width="281" order="0"/>
+        <field id="tpd4" name="Begin date" width="106" order="1"/>
+        <field id="tpd5" name="End date" width="106" order="2"/>
         <field id="tpd15" name="Notes" width="20" order="3"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
