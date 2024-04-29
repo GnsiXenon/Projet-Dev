@@ -15,8 +15,8 @@ CREATE TABLE History (
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_user INT,
     id_challenge INT,
-    FOREIGN KEY (id_user) REFERENCES User(id),
-    FOREIGN KEY (id_challenge) REFERENCES Challenge(id)
+    FOREIGN KEY (id_user) REFERENCES User(id) ON UPDATE CASCADE,
+    FOREIGN KEY (id_challenge) REFERENCES Challenge(id) ON UPDATE CASCADE
 );
 
 INSERT INTO Challenge (flag) VALUES ("HaCoeur{w3_h0p3_y0u_l34rn3d_s0m3th1ng_4nd_th4t_w3b_c4n_b3_fun_853643}");
