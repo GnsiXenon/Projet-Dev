@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 from chatbot.Chatbot import respond
+from gemini_api import generate_text
 # from openai_api import openai_response
 
 TOKEN = "MTIyOTcyNjU2Nzk2NjU3MjYyNQ.GmsRxV.xxQXy3delgfZmVMzRYH1ksntkb3iyudtX-ZSvc"
@@ -23,7 +24,7 @@ class MyBot(commands.Bot):
             await message.channel.send("For use the bot you need to start the conversation with the bot by typing !start")
             return
         else :
-            await message.channel.send(respond(message.content))
+            await message.channel.send(generate_text(message.content))
 
 
     async def on_ready(self) -> None:
