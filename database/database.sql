@@ -23,3 +23,4 @@ INSERT INTO Challenge (flag) VALUES ("HaCoeur{w3_h0p3_y0u_l34rn3d_s0m3th1ng_4nd_
 INSERT INTO Challenge (flag) VALUES ("HaCoeur{G00d_j0b_y0u_f0und_th3_fl4g}");
 INSERT INTO Challenge (flag) VALUES ("HaCoeur{Georges-Guynemer_7}");
 INSERT INTO Challenge (flag) VALUES ("HaCoeur{B0T_N0T_A1}");
+INSERT INTO Challenge (flag) VALUES ("HaCoeur{R4ns0mw4r3_1s_n0t_c00l}");
