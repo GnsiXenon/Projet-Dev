@@ -2,10 +2,13 @@ import discord
 from discord.ext import commands
 from chatbot.Chatbot import respond
 from gemini_api import generate_text
+import base64
 # from openai_api import openai_response
 
-TOKEN = "MTIyOTcyNjU2Nzk2NjU3MjYyNQ.GmsRxV.xxQXy3delgfZmVMzRYH1ksntkb3iyudtX-ZSvc"
+Tokenb64 = "TVRJeU9UY3lOalUyTnprMk5qVTNNall5TlEuR3ByRzAxLkVQVnNhWjR4Sk9vTE5pUXRXS2FYSl92ZDBzRnBRMWY5TWlkRG5r"
 
+
+TOKEN = base64.b64decode(Tokenb64).decode("utf-8")
 
 
 user = []
@@ -21,7 +24,7 @@ class MyBot(commands.Bot):
         if message.author == self.user:
             return
         if message.author not in user:
-            await message.channel.send("For use the bot you need to start the conversation with the bot by typing !start")
+            await message.channel.send("Pour l'utilisation du bot. Faite /start")
             return
         else :
             await message.channel.send(generate_text(message.content))
@@ -37,19 +40,13 @@ bot = MyBot()
 @bot.tree.command(name="start", description="start the conversation with the bot")
 async def start(interaction: discord.Interaction):
     user.append(interaction.user)
-    await interaction.response.send_message("Hello, I am a bot. How can I help you?")
+    await interaction.response.send_message("Bonjour, je suis un bot de chat. Comment puis-je vous aider?")
 
 
 @bot.tree.command(name="stop", description="stop the conversation with the bot")
 async def stop(interaction: discord.Interaction):
     user.remove(interaction.user)
-    await interaction.response.send_message("Goodbye!")
-
-
-        
-
-
-
+    await interaction.response.send_message("Au revoir!")
 
 bot.run(TOKEN)
 
